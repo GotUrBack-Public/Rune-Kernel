@@ -47,5 +47,3 @@ If you have experience with:
 - Operating system internals
 
 and want to help build an open-source kernel project, feel free to contribute.
-
----
