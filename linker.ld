@@ -1,35 +1,28 @@
-ENTRY(kmain)
-
 PHDRS
 {
-    text    PT_LOAD    FLAGS(0x05);
-    rodata  PT_LOAD    FLAGS(0x04);
-    data    PT_LOAD    FLAGS(0x06);
+    text    PT_LOAD FLAGS(5);
+    rodata  PT_LOAD FLAGS(4);
+    data    PT_LOAD FLAGS(6);
 }
 
-SECTIONS
+sections
 {
     . = 0xffffffff80000000;
 
     .text : {
-        *(.text .text.*)
+        *(.text*)
     } :text
 
     .rodata : {
-        *(.rodata .rodata.*)
+        *(.requests)
+        *(.rodata*)
     } :rodata
 
     .data : {
-        *(.data .data.*)
+        *(.data*)
     } :data
 
     .bss : {
-        *(.bss .bss.*)
-        *(COMMON)
+        *(.bss*)
     } :data
-
-    /DISCARD/ : {
-        *(.eh_frame)
-        *(.note .note.*)
-    }
 }
