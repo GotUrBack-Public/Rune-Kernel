@@ -5,7 +5,7 @@ PHDRS
     data    PT_LOAD FLAGS(6);
 }
 
-sections
+SECTIONS
 {
     . = 0xffffffff80000000;
 
